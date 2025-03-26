@@ -16,7 +16,6 @@ body {
 	flex-direction: column;
 	background-color: var(--white);
 	color: var(--dark);
-	min-width: 80rem;
 }
 
 header {
@@ -31,6 +30,10 @@ header {
 	padding: 1.2rem 3rem;
 	margin: 1.4rem 0.8rem;
 	border-radius: 1rem;
+}
+
+header h1 {
+	font-size: 3rem;
 }
 
 header > div:nth-child(2) {
@@ -49,6 +52,7 @@ header div.divider {
 	background-color: var(--dark);
 }
 
+/* Styling for the search bar */
 input[type='search'] {
 	border-radius: 1.6rem;
 	background-image: url('./assets/search.svg');
@@ -63,10 +67,6 @@ input[type='search'] {
 	transition: width 0.7s ease-in-out, height 0.7s ease-out;
 }
 
-.profile-picture {
-	width: 3.6rem;
-	border-radius: 50%;
-}
 input[type='search']:hover,
 input[type='search']:focus {
 	width: 40rem;
@@ -80,13 +80,6 @@ input[type='search']:focus {
 	padding-left: 3.7rem;
 }
 
-img[alt='notification'] {
-	width: 2.4rem;
-}
-
-img[alt='drop-down'] {
-	width: 1.5rem;
-}
 .logo {
 	display: flex;
 	gap: 1rem;
@@ -94,12 +87,87 @@ img[alt='drop-down'] {
 }
 
 .logo img {
-	width: 3.3em;
+	width: 3.4em;
 }
 
-main:has(> .onload) {
-    font-size: 5rem;
-    display: grid;
-    place-content: center;
-    height: 60vh;
+/* Centers page items when the loading icon or the landing page text are present in the page */
+main:has(> .onload),
+main:has(> .loader) {
+	font-size: 5rem;
+	display: grid;
+	place-content: center;
+	height: 60vh;
+}
+
+.cards {
+	display: grid;
+	padding: 2rem;
+	gap: 3rem;
+	justify-items: center;
+	grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+}
+.card {
+	border: 3px solid var(--deep-brown);
+	position: relative;
+	border-radius: 6px;
+	min-height: 44rem;
+	padding: 1.2rem;
+	display: grid;
+	justify-self: stretch;
+	grid-template-columns: 17rem 1fr;
+	grid-template-rows: minmax(28rem, 33rem);
+	background-color: var(--chill-brown);
+}
+
+.card img {
+	flex: initial;
+	place-self: center;
+	max-height: 240px;
+}
+
+.card div :first-child {
+	text-align: center;
+	font-weight: bold;
+}
+
+.description {
+	grid-column: 1/-1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.card {
+	transition: height 1s;
+}
+
+.description button {
+	border: none;
+	position: absolute;
+	bottom: 1rem;
+	cursor: pointer;
+	background: none;
+	border-radius: 10px;
+	backdrop-filter: blur(2px);
+	width: 95%;
+}
+
+.loader {
+	border: 16px solid var(--light-brown);
+	border-top: 16px solid var(--dark);
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 1.2s linear infinite;
+	place-self: center;
+}
+
+/* Animation for the loading icon */
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
