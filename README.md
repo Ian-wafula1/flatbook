@@ -4,6 +4,14 @@ The best site for looking up information on your favourite books.
 
 ## 📝 Table of content
 
+- [Features](#-features)
+- [Installation and Usage](#️-installation-and-usage)
+- [API reference](#-api-reference)
+- [Technologies Used](#-technologies-used)
+- [Screenshots](#-screenshots)
+- [Contributing](#-contributing)
+- [Contact](#-contact)
+
 ## ✨ Features 
 
 - The user is able to search for any book that is available in the Google Books api, which features a large collection of books.
