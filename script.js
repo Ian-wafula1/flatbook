@@ -17,13 +17,15 @@ search.addEventListener('focusout', (e) => {
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
-	let value = search.value.replaceAll(' ', '+');
+	let value = search.value.trim().replaceAll(' ', '+');
 	cards.innerHTML = '';
 
+	// Creates loading circle
 	const loader = document.createElement('div');
 	loader.classList.add('loader');
 	main.appendChild(loader);
 
+	// Removes the paragraph that is displayed on initial page load
 	onloadPara.remove();
 
 	fetch(`https://www.googleapis.com/books/v1/volumes?q=${value}&maxResults=40&key=AIzaSyDVUUbEMD8Fj4JB5wajI7V-Us_cvsqKM80`)
