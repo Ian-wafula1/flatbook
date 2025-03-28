@@ -38,7 +38,7 @@ cd flatbook
 ## 🔌 API Reference
 
 - The project uses the [Google Books api](https://developers.google.com/books) to fetch data on books.
-- This is done through a GET request to the api
+- This is done through a GET request to the api that returns 40 books matching the search input
 
 ## 🛠 Technologies Used
 
