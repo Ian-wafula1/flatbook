@@ -166,3 +166,17 @@ main:has(> .loader) {
 		transform: rotate(360deg);
 	}
 }
+
+@media (max-width: 700px) {
+	input[type='search']:hover,
+	input[type='search']:focus {
+		width: calc(25vw + 5rem);
+		background-position: 0.7rem 0.7rem;
+		transition: width 0.7s ease-in-out, height 0.7s ease-in-out;
+		padding-left: 3.7rem;
+	}
+
+	header {
+		padding: 1.2rem 1.5rem;
+	}
+}
